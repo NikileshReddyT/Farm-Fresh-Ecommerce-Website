@@ -1,13 +1,12 @@
 // src/pages/ProductList.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import tomato from '../Images/tomato.jpg'
+import apple from '../Images/apple.jpg'
+import product_list from '../components/ProductList';
 
 function ProductList() {
-  const [products, setProducts] = useState([
-    { id: 1, name: 'Fresh Tomatoes', price: 2.99, image: 'tomato.jpg' },
-    { id: 2, name: 'Organic Apples', price: 3.99, image: 'apple.jpg' },
-    // Add more products as needed
-  ]);
+  const [products, setProducts] = useState(product_list);
 
   return (
     <div className="product-list">

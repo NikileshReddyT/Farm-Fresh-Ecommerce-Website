@@ -11,8 +11,8 @@ function Footer() {
         </div>
         <div className="footer__section">
           <h3 className="footer__title">Contact</h3>
-          <p className="footer__text">Email: info@farmfreshmarket.com</p>
-          <p className="footer__text">Phone: (123) 456-7890</p>
+          <p className="footer__text">Email: nikileshreddyt@gmail.com</p>
+          <p className="footer__text">Phone: +91 8639870053</p>
         </div>
         <div className="footer__section">
           <h3 className="footer__title">Follow Us</h3>
