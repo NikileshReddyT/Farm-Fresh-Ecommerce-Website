@@ -10,6 +10,8 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import FarmerPage from './pages/FarmerPage';
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
@@ -21,10 +23,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<ProductList />} />
             <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/cart" element={<Cart />} />
+            
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/farmer" element={<FarmerPage/>} />
+            <Route path="/cart" element={<CartPage />} />
           </Routes>
         </main>
         <Footer />

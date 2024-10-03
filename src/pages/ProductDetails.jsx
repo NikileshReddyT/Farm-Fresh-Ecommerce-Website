@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import product_list from '../components/ProductList'; // Importing the product list
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '../redux/cartSlice'; // Import the addItem action
 
 function ProductDetails() {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items); // Get cart items from Redux store
+
   const { id } = useParams();  // Getting product id from the URL params
-  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -18,9 +22,13 @@ function ProductDetails() {
   }
 
   const handleAddToCart = () => {
-    // Add to cart logic here (you can implement state management or global cart)
-    // For now, we'll just navigate to the cart page
-    navigate('/cart');
+    const currentQuantity = getProductQuantity(product.id); // Get current quantity
+    dispatch(addItem({ ...product, quantity: currentQuantity + 1 })); // Increase quantity by 1
+  };
+
+  const getProductQuantity = (productId) => {
+    const cartItem = cartItems.find(item => item.id === productId);
+    return cartItem ? cartItem.quantity : 0;
   };
 
   return (
@@ -30,8 +38,11 @@ function ProductDetails() {
         <h1 className="product-details__name">{product.name}</h1>
         <p className="product-details__price">${product.price.toFixed(2)}</p>
         <p className="product-details__description">{product.description}</p>
-        <button onClick={handleAddToCart} className="product-details__add-to-cart">
-          Add to Cart
+        <button
+          onClick={handleAddToCart} // Call the function without parameters
+          className="product-card__button"
+        >
+          Add to Cart ({getProductQuantity(product.id)}) {/* Show current quantity */}
         </button>
       </div>
     </div>

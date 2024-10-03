@@ -224,6 +224,11 @@ body {
   height: 200px;
   object-fit: cover;
 }
+.product-card-cart__image{
+  width: auto;
+  height: 80px;
+  border-radius: 20px;
+}
 
 .product-card__name {
   font-size: 1.2rem;
@@ -241,13 +246,17 @@ body {
   background-color: var(--primary-color);
   color: var(--white);
   text-align: center;
-  padding: 0.75rem;
+  padding: 0.30rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .product-card__link:hover {
   background-color: #3d8b4e;
+}
+.product-card__button.added {
+  background-color: #ffc107;
+  
 }
 
 /* Product Details Styles */
@@ -302,7 +311,7 @@ body {
   background-color: #3d8b4e;
 }
 
-/* Cart Styles */
+/* Cart Styles
 .cart__items {
   list-style-type: none;
   padding: 0;
@@ -375,7 +384,112 @@ body {
   margin-top: 1rem;
   color: var(--primary-color);
   text-decoration: none;
+} */
+
+
+.cart__items {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0; /* Reset margin */
 }
+
+.cart-item {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-color: var(--white);
+  padding: 20px; /* Add more padding for a neater look */
+  margin-bottom: 1rem;
+  border-radius: 8px; /* Slightly round corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+  
+  transition: box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+.cartitem{
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.cart-item__name {
+  flex: 1;
+  font-size: 1rem; /* Ensure text size is uniform */
+  color: var(--text-color); /* Ensure text color is defined */
+}
+
+.cart-item__price {
+  font-weight: bold;
+  margin: 0 1rem; /* Maintain margin for spacing */
+  font-size: 1.1rem; /* Slightly larger font size */
+}
+
+.cart-item__quantity {
+  width: 60px; /* Increased width for input field */
+  text-align: center;
+  margin-right: 1rem;
+  font-size: 1rem; /* Uniform text size */
+}
+
+.cart-item__remove {
+  background-color: var(--error-color);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem; /* More padding for a neater button */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem; /* Uniform text size */
+}
+
+.cart-item__remove:hover {
+  background-color: #c0392b;
+}
+
+.cart__total {
+  font-size: 1.5rem; /* Larger font for total price */
+  font-weight: bold; /* Bold text for emphasis */
+  text-align: right;
+  margin: 1.5rem 0; /* Add more margin for spacing */
+}
+
+.cart__checkout-button {
+  background-color: var(--success-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem; /* Consistent padding */
+  font-size: 1rem; /* Consistent font size */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float: right; /* Keep button to the right */
+  margin-top: 1rem; /* Add top margin for separation */
+}
+
+.cart__checkout-button:hover {
+  background-color: #27ae60;
+}
+
+.cart__continue-shopping {
+  display: inline-block;
+  margin-top: 1.5rem; /* Increased margin for better spacing */
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1rem; /* Consistent font size */
+  transition: color 0.3s ease; /* Add transition for hover effect */
+}
+
+.cart__continue-shopping:hover {
+  color: darken(var(--primary-color), 10%); /* Slightly darker color on hover */
+}
+
+
 
 /* Login and Register Form Styles */
 .login,.register{
@@ -464,6 +578,124 @@ body {
 .checkout-form__submit-button:hover {
   background-color: #27ae60;
 }
+
+/* src/styles/FarmerPage.css */
+.farmer-page {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.farmer-page h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.farmer-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.farmer-form label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.farmer-form input,
+.farmer-form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.farmer-form input[type="text"],
+.farmer-form input[type="number"] {
+  height: 40px;
+}
+
+.farmer-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.farmer-form button {
+  background-color: #007b5e;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.farmer-form button:hover {
+  background-color: #005c47;
+}
+
+
+
+/* src/styles/CartPage.css */
+.cart-page {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-item__image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.cart-item__details {
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.cart-item__details h3 {
+  margin: 0 0 10px 0;
+}
+
+button {
+  padding: 10px;
+  background-color: #007b5e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005c47;
+}
+
+.product-list-display-buttons{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+
+
 
 /* Responsive Design */
 /* src/styles/responsive.css */

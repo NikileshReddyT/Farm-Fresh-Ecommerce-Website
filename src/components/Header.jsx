@@ -43,6 +43,16 @@ function Header() {
           </li>
           <li className="header__nav-item">
             <NavLink
+              to="/farmer"
+              className={({ isActive }) =>
+                isActive ? 'header__nav-link header__nav-link--active' : 'header__nav-link'
+              }
+            >
+              Farmer
+            </NavLink>
+          </li>
+          <li className="header__nav-item">
+            <NavLink
               to="/login"
               className={({ isActive }) =>
                 isActive ? 'header__nav-link header__nav-link--active' : 'header__nav-link'
